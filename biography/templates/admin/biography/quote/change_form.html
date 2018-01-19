@@ -1,0 +1,16 @@
+{%extends "admin/change_form.html"%}
+
+{% block extrastyle %}
+{{ block.super }}
+<style>
+#content{
+  max-width: 800px;
+}
+.aligned label{
+  width:80px;
+}
+form .aligned input + div.help{
+  margin-left: 80px;
+}
+</style>
+{%endblock%}

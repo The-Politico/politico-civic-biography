@@ -1,0 +1,23 @@
+{%extends "admin/change_form.html"%}
+
+{% block extrastyle %}
+{{ block.super }}
+<style>
+#content{
+  max-width: 800px;
+}
+#content-main{
+  overflow-x: hidden;
+}
+#birthplace-group thead th:nth-child(5),
+#financials-group thead th:nth-child(3),
+#ideology-group thead th:nth-child(4){
+  color: transparent;
+}
+#birthplace-group td.delete input,
+#financials-group td.delete input,
+#ideology-group td.delete input{
+  display: none;
+}
+</style>
+{%endblock%}
