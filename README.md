@@ -16,19 +16,19 @@
   INSTALLED_APPS = [
       # ...
       'rest_framework',
+      'entity',
+      'geography',
+      'government',
+      'election',
       'biography',
   ]
 
   #########################
   # biography settings
 
-  BIOGRAPHY_SECRET_KEY = ''
-  BIOGRAPHY_AWS_ACCESS_KEY_ID = ''
-  BIOGRAPHY_AWS_SECRET_ACCESS_KEY = ''
-  BIOGRAPHY_AWS_REGION = ''
-  BIOGRAPHY_AWS_S3_BUCKET = ''
-  BIOGRAPHY_CLOUDFRONT_ALTERNATE_DOMAIN = ''
-  BIOGRAPHY_S3_UPLOAD_ROOT = ''
+  BIOGRAPHY_API_AUTHENTICATION_CLASS = 'rest_framework.authentication.BasicAuthentication' # default
+  BIOGRAPHY_API_PERMISSION_CLASS = 'rest_framework.permissions.IsAdminUser' # default
+  BIOGRAPHY_API_PAGINATION_CLASS = 'biography.pagination.ResultsPagination' # default
   ```
 
 ### Developing
