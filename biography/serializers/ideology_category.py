@@ -1,6 +1,5 @@
-from rest_framework import serializers
-
 from biography.models import IdeologyCategory
+from rest_framework import serializers
 
 
 class IdeologyCategorySerializer(serializers.ModelSerializer):

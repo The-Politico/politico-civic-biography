@@ -1,9 +1,8 @@
-from rest_framework import serializers
-
 from biography.models import Birthplace
+from rest_framework import serializers
 
 
 class BirthplaceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Birthplace
-        fields = '__all__'
+        exclude = ('biography',)

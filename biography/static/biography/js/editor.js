@@ -14,7 +14,7 @@ window.onload = function() {
     simplemdeJQuery.each(simplemdeJQuery('.markdown-editor'), function(i, elem) {
       if (typeof elem.SimpleMDE !== 'undefined') return;
       var id = simplemdeJQuery(elem).attr('id');
-      if (id.indexOf('__prefix__') >= 0) return;
+      if (id.indexOf('__prefix__') >= 0) return; // Exclude prefixed forms
       var simplemde = new SimpleMDE({
         element: elem,
         placeholder: "Write paragraph text in Markdown syntax using the toolbar.",

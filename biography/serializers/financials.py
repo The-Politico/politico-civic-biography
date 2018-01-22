@@ -1,9 +1,8 @@
-from rest_framework import serializers
-
 from biography.models import Financials
+from rest_framework import serializers
 
 
 class FinancialsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Financials
-        fields = '__all__'
+        exclude = ('biography',)
