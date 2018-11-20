@@ -5,7 +5,7 @@ from entity.models import Person
 
 class Biography(models.Model):
     person = models.OneToOneField(Person, on_delete=models.CASCADE)
-    notes = MarkdownField(blank=True, null=True)
+    notes = models.TextField(blank=True, null=True)
 
     def __str__(self):
         return self.person.full_name

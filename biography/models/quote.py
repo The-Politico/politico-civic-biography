@@ -7,17 +7,15 @@ class QuoteTopic(models.Model):
     """
     A topic a quote pertains to.
     """
+
     slug = models.SlugField(
-        max_length=255, blank=True, null=True, editable=False)
+        max_length=255, blank=True, null=True, editable=False
+    )
     name = models.CharField(max_length=250)
 
     def save(self, *args, **kwargs):
         self.slug = uuslug(
-            self.name,
-            instance=self,
-            max_length=100,
-            separator='-',
-            start_no=2
+            self.name, instance=self, max_length=100, separator="-", start_no=2
         )
         super(QuoteTopic, self).save(*args, **kwargs)
 
@@ -29,27 +27,32 @@ class Quote(models.Model):
     """
     Quotes spoken.
     """
+
     biography = models.ForeignKey(
-        'Biography',
-        related_name="quotes",
-        on_delete=models.CASCADE,
+        "Biography", related_name="quotes", on_delete=models.CASCADE
     )
-    text = MarkdownField()
+    text = models.TextField()
     topic = models.ForeignKey(
-        'QuoteTopic', blank=True, null=True, on_delete=models.PROTECT)
+        "QuoteTopic", blank=True, null=True, on_delete=models.PROTECT
+    )
     date = models.DateField()
     place = models.CharField(
-        max_length=250, blank=True, null=True,
-        help_text="If known, name the location where speaker spake.")
+        max_length=250,
+        blank=True,
+        null=True,
+        help_text="If known, name the location where speaker spake.",
+    )
     link = models.URLField(
-        blank=True, null=True,
+        blank=True,
+        null=True,
         help_text="If available, add a link to the quote on social"
-        " media or as published online.")
-    context = MarkdownField(blank=True, null=True)
+        " media or as published online.",
+    )
+    context = models.TextField(blank=True, null=True)
 
     @property
     def truncated(self):
-        return ' '.join(self.text.split()[:10])
+        return " ".join(self.text.split()[:10])
 
     @property
     def speaker(self):
