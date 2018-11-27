@@ -25,6 +25,7 @@ class Education(models.Model):
     degree = models.CharField(
         max_length=1, choices=DEGREE_CHOICES, blank=True, null=True
     )
+    graduation_date = models.DateField(blank=True, null=True)
     honorary = models.BooleanField(default=False)
     state = StateField(blank=True, null=True)
     country = CountryField(default="US")
