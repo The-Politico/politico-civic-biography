@@ -23,6 +23,7 @@ class Publication(models.Model):
     publication_type = models.CharField(
         max_length=10, choices=PUBLICATION_TYPES, default=BOOK
     )
+    publication_date = models.DateField(blank=True, null=True)
     publisher = models.CharField(max_length=250, blank=True, null=True)
     link = models.URLField(blank=True, null=True)
     notes = models.TextField(blank=True, null=True)

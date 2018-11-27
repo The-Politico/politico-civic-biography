@@ -28,6 +28,7 @@ class Occupation(models.Model):
     title = models.CharField(max_length=250)
     from_date = models.DateField(blank=True, null=True)
     to_date = models.DateField(blank=True, null=True)
+    present = models.BooleanField(default=False)
     organization = models.ForeignKey(
         Organization,
         related_name="+",
