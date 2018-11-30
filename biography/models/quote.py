@@ -59,4 +59,6 @@ class Quote(models.Model):
         return self.biography.person.full_name
 
     def __str__(self):
-        return self.biography.full_name
+        return "{} {}".format(
+            self.date.strftime("%Y-%m-%d"), self.biography.person.full_name
+        )
