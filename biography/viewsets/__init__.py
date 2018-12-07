@@ -8,5 +8,3 @@ from .ideology import IdeologyViewSet
 from .legislation import LegislationViewSet
 from .occupation import OccupationViewSet
 from .publication import PublicationViewSet
-from .quote_topic import QuoteTopicViewSet
-from .quote import QuoteViewSet

@@ -8,5 +8,3 @@ from .ideology_category import IdeologyCategorySerializer
 from .legislation import LegislationSerializer
 from .occupation import OccupationSerializer
 from .publication import PublicationSerializer
-from .quote import QuoteSerializer
-from .quote_topic import QuoteTopicSerializer

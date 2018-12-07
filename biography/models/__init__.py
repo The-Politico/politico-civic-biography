@@ -7,5 +7,4 @@ from .ideology import Ideology, IdeologyCategory
 from .legislation import Legislation
 from .occupation import Occupation
 from .publication import Publication
-from .quote import Quote, QuoteTopic
 from .residence import Residence
