@@ -29,14 +29,7 @@ class Occupation(models.Model):
     from_date = models.DateField(blank=True, null=True)
     to_date = models.DateField(blank=True, null=True)
     present = models.BooleanField(default=False)
-    organization = models.ForeignKey(
-        Organization,
-        related_name="+",
-        blank=True,
-        null=True,
-        on_delete=models.SET_NULL,
-        help_text="Optionally, associate this occupation with an organization.",
-    )
+    employer = models.CharField(max_length=250, null=True, blank=True)
     notes = models.TextField(blank=True, null=True)
 
     def __str__(self):

@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 
 setup(
     name="politico-civic-biography",
-    version="0.2.0",
+    version="0.2.1",
     description="",
     url="https://github.com/The-Politico/politico-civic-biography",
     author="POLITICO interactive news",
