@@ -1,5 +1,13 @@
-from biography.models import (Birthplace, Education, Financials, Ideology,
-                              Legislation, Occupation, Publication)
+from biography.models import (
+    Birthplace,
+    Education,
+    Financials,
+    Ideology,
+    Legislation,
+    Occupation,
+    PastCampaign,
+    Publication,
+)
 from django.contrib import admin
 
 
@@ -25,6 +33,12 @@ class OccupationInline(admin.StackedInline):
     extra = 0
 
 
+class PastCampaignInline(admin.StackedInline):
+    model = PastCampaign
+    autocomplete_fields = ["office"]
+    extra = 0
+
+
 class PublicationInline(admin.StackedInline):
     model = Publication
     extra = 0
@@ -42,6 +56,7 @@ class BiographyAdmin(admin.ModelAdmin):
         IdeologyInline,
         EducationInline,
         OccupationInline,
+        PastCampaignInline,
         PublicationInline,
         LegislationInline,
     ]
