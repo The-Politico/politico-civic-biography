@@ -31,6 +31,48 @@
   BIOGRAPHY_API_PAGINATION_CLASS = 'biography.pagination.ResultsPagination' # default
   ```
 
+### Models
+
+##### Biography
+
+A biography of a `Person`. This model is used as a foreign key for all the other models in this app.
+
+##### Birthplace
+
+Where a person was born. One-to-one to `Biography`.
+
+##### Education
+
+Where a person was educated. Built to handle all types of college degrees. Foreign keys to `Biography`.
+
+##### Financials
+
+A person's net worth. One-to-one to `Biography`.
+
+##### Ideology
+
+A person's political ideology (through `IdeologyCategory`) and DW-Nominate score. One-to-one to `Biography`
+
+##### Legislation
+
+A piece of legislation that someone took part in crafting. Handles sponsorship and signatory roles. Foreign keys to `Biography`.
+
+##### Occupation
+
+A job held. Tracks start and end dates, private/public sector. Foreign keys to `Biography`
+
+##### PastCampaign
+
+A (usually failed) campaign that happened in the past, e.g. Joe Biden's 2008 presidential campaign. Foreign keys to `Biography`.
+
+##### Publication
+
+A book or article published by a person. Foreign keys to `Biography`.
+
+##### Residence
+
+Current residence of the person. One-to-one to `Biography`.
+
 ### Developing
 
 ##### Running a development server
